@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
 * print_c - c argument.
@@ -8,8 +9,8 @@
 
 int print_c(va_list c)
 {
-	char ch = va_arg(c, char);
-	write(1, ch, 1);
+	char *ch = (char)va_arg(c, int);
+	putchar(ch);
 
 	return (1);
 }
