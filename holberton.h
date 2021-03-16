@@ -9,6 +9,7 @@
 
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdlib.>
 
 typedef struct print
 {
