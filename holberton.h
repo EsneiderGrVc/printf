@@ -7,6 +7,9 @@
 * @f: function pointer.
 */
 
+#include <unistd.h>
+#include <stdarg.h>
+
 typedef struct print
 {
 	char *op;
@@ -14,9 +17,5 @@ typedef struct print
 } print_op;
 
 int _printf(const char *format, ...);
-#include <limits.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stadarg.h>
 
 #endif /*HOLBERTON_H */
