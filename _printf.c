@@ -39,3 +39,4 @@ int (*get_specifier_function(const char *format))(va_list)
 	/* printf("%s", &format[i]); */
 	return(a[i].f);
 }
+
