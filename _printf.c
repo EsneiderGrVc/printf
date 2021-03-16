@@ -1,26 +1,21 @@
 #include "holberton.h"
 
 /**
-* get_specifier_function - en
-* @format: c/s
-* Return: pointer to the right function.
+*
+*
+*
 */
 
-int (*get_specifier_function(char *format))(va_list)
+int _printf(const char *format, ...)
 {
-	print_op a[] =
-	{
-		{"c", print_c},
-		{"s", print_s},
-		{NULL, NULL}
-	};
 	int i = 0;
+	va_list ar;
+	int (*f)(va_list);
+	va_start(ar, format);
 
-	while (a[i].op)
-	{
-		if (format == *(a[i].op))
-			break;
-		i++;
-	}
-	return(a[i].f);
+	f = get_specifier_function(&format[i+1]);
+
+	va_end(ar);
+
+	return (f);
 }
