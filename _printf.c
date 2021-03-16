@@ -6,7 +6,7 @@
 * Return: pointer to the right function.
 */
 
-int (*get_specifier_function(char format, ...))
+int (*get_specifier_function(char *format))(va_list)
 {
 	print_op a[] =
 	{
@@ -16,11 +16,11 @@ int (*get_specifier_function(char format, ...))
 	};
 	int i = 0;
 
-	while (a[i]->op)
+	while (a[i].op)
 	{
-		if (format = a[i]->op)
+		if (format == *(a[i].op))
 			break;
 		i++;
 	}
-	return(a[i]->f);
+	return(a[i].f);
 }
