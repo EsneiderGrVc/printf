@@ -17,5 +17,7 @@ typedef struct print
 } print_op;
 
 int _printf(const char *format, ...);
+int print_c(va_list c);
+int print_s(va_list s);
 
 #endif /*HOLBERTON_H */
