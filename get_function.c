@@ -9,8 +9,7 @@
 int (*get_specifier_function(const char *format))(va_list)
 {
 	/* init op structure */
-	print_op a[] =
-	{
+	print_op a[] = {
 		{"c", print_c},
 		{"s", print_s},
 		{NULL, NULL}
@@ -24,5 +23,5 @@ int (*get_specifier_function(const char *format))(va_list)
 			break;
 		i++;
 	}
-	return(a[i].f);
+	return (a[i].f);
 }
