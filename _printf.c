@@ -1,42 +1,62 @@
 #include "holberton.h"
 
 /**
-*
-*
-*
+* _printf - entry point.
+* @format: string to print and specifier.
+* Return: count.
 */
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
+	/* i: iterator / count: Number or characters printed */
+	int i = 0, count = 0;
+
+	/* va_list store arguments int variable */
 	va_list ar;
+
+	/*Pointer to function that recieve va_list arguments */
 	int (*f)(va_list);
+
 	va_start(ar, format);
 
-	f = get_specifier_function(&format[i+1]);
-
-	va_end(ar);
-	return (f);
-}
-
-
-int (*get_specifier_function(const char *format))(va_list)
-{
-	print_op a[] =
+	/* Print strings and variables */
+	while (format[i] != '\0')
 	{
-		{"c", print_c},
-		{"s", print_s},
-		{NULL, NULL}
-	};
-	int i = 0;
+		/*Print *format until '\0' or % symbol */
+		while (format[i] != '%' && format[i])
+		{
+			write(1, &format[i], 1);
+			count++;
+			i++;
+		}
+		/*if format[i] = '\0' return the count */
+		if (format[i] == '\0')
+			return (count);
 
-	while (a[i].op)
-	{
-		if (*format == *(a[i].op))
-			break;
-		i++;
+		/* if format[i] = '%', pass specifier into get_function */
+		if (format[i] == '%')
+		f = get_specifier_function(&format[i + 1]);
+
+		/* if is valid, count += arg lenght and continue */
+		if (f != NULL)
+		{
+			count += f(ar);
+			i += 2;
+			continue;
+		}
+
+		/* if format[ i + 1] != '\0', keep printing */
+		if (format[i + 1] == '\0')
+		return (-1);
+		write (1, &format[i], 1);
+		count++;
+
+		/* if after % there is another %, jump it */
+		(format[i + 1] == '%')
+		? i += 2
+		: i++;
 	}
-	/* printf("%s", &format[i]); */
-	return(a[i].f);
+	va_end(ar);
+	return (count);
 }
 
