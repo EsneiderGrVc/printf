@@ -9,7 +9,6 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, count = 0;
-	/* va_list store arguments int variable */
 	va_list ar;
 	/*Pointer to function that recieve va_list arguments */
 	int (*f)(va_list);
