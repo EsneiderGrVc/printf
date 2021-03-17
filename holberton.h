@@ -7,9 +7,9 @@
 * @f: function pointer.
 */
 
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
+#include <unistd.h> /* Support to write() */
+#include <stdarg.h> /* Support to variadic functions */
+#include <stdlib.h> /* Support to NULL concept */
 
 typedef struct print
 {
