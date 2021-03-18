@@ -9,7 +9,8 @@
 int print_c(va_list c)
 {
 	char ch = va_arg(c, int);
-	write(1, ch, 1);
+
+	write(1, &ch, 1);
 	return (1);
 }
 
@@ -24,6 +25,8 @@ int print_s(va_list s)
 	int len = 0;
 
 	char *str = va_arg(s, char *);
+
+	/* Find the str lenght */
 	while (str[len])
 	len++;
 
