@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 	int (*f)(va_list);
 
 	va_start(ar, format);
+	if (format == NULL)
+		return (-1);
 	/* Print strings and variables */
 	while (format[i] != '\0')
 	{
