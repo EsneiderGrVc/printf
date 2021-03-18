@@ -7,15 +7,17 @@
 * @f: function pointer.
 */
 
+#include <unistd.h> /* Support to write() */
+#include <stdarg.h> /* Support to variadic functions */
+#include <stdlib.h> /* Support to NULL concept */
+
 typedef struct print
 {
 	char *op;
 	int (*f)(va_list);
 } print_op;
 
-#include <unistd.h> /* Support to write() */
-#include <stdarg.h> /* Support to variadic functions */
-#include <stdlib.h> /* Support to NULL concept */
+
 
 int (*get_specifier_function(const char *format))(va_list);
 int _printf(const char *format, ...);

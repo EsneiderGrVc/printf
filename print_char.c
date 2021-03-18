@@ -23,12 +23,14 @@ int print_c(va_list c)
 int print_s(va_list s)
 {
 	int len = 0;
-
 	char *str = va_arg(s, char *);
+
+	if (str == NULL)
+		str = "(null)";
 
 	/* Find the str lenght */
 	while (str[len])
-	len++;
+		len++;
 
 	write(1, str, len);
 	return (len);

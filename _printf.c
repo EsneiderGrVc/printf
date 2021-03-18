@@ -10,10 +10,11 @@ int _printf(const char *format, ...)
 {
 	int i = 0, count = 0;
 	va_list ar;
-	/*Pointer to function that recieve va_list arguments */
 	int (*f)(va_list);
 
 	va_start(ar, format);
+	if (format == NULL)
+		return (-1);
 	/* Print strings and variables */
 	while (format[i] != '\0')
 	{
