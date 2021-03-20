@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 			i += 2;
 			continue;
 		}
-		/* if format[ i + 1] != '\0', keep printing */
+		/* if format[i + 1] != '\0', keep printing */
 		if (format[i + 1] == '\0')
 			return (-1);
 		write(1, &format[i], 1);
