@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
 * print_d - function to print an integer.
 * @d: integer passed through va_list.
@@ -18,15 +18,23 @@ int print_d(va_list d)
 
 	array = malloc(len * sizeof(int));
 
-	while ((num % 10) != 0)
+	if (num != 0)
 	{
-		mod = num % 10;
-		if (mod < 0)
-			mod = -mod;
-		array[index] = mod;
-		num /= 10;
-		index++;
-		j++;
+		while (((num % 10) != 0))
+		{
+			mod = num % 10;
+			if (mod < 0)
+				mod = -mod;
+			array[index] = mod;
+			num /= 10;
+			index++;
+			j++;
+		}
+	}
+	else
+	{
+		write(1, "0", 1);
+		return (1);
 	}
 
 	while (j > 0)
@@ -60,7 +68,7 @@ int print_i(va_list i)
 
 	array = malloc(len * sizeof(int));
 
-	while ((num % 10) != 0)
+	while (((num % 10) != 0) || (num != 0))
 	{
 		mod = num % 10;
 		if (mod < 0)
