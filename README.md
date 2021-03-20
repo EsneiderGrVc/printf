@@ -4,6 +4,8 @@ _printf it's a program who replies the work of the real printf function.
 
 **Prototype:**  ```int _printf(const char *, ...);```
 
+![Captura de Pantalla 2021-03-19 a la(s) 9 23 49 p  m](https://user-images.githubusercontent.com/49998725/111856541-6785fa80-88f9-11eb-8962-114adad14821.png)
+
 ## Examples
 
 ### String _printf("Let's try to printf a simple sentence.\n");
