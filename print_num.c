@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
 * print_d - print an integer and return numbers of chars printed.
