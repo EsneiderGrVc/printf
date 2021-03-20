@@ -1,0 +1,33 @@
+_PRINTF (3)
+
+NAME
+	_printf - output function printf to translate internal values to characters.
+
+SYNOPSIS
+	_printf - (const char *format, ...).
+
+DESCRIPTION
+	_printf converts, formats, and prints its arguments on the standartd output control of the format. It returns the number of characters printed.
+	The format string contains two types of objects: ordinary characters, which are copied to the output stream, and conversion specifications, each
+	conversion specification begins with a % and ends with a conversion character.
+	Argument types; Printed As:
+
+		c 	print a single character.
+		s 	print characters from the string until a '\0' or the number of characters given by the precision.
+		d	print decimal numbers.
+		i	print decimal numbers.
+		%	no argument is converted; print %.
+
+EDGE CASES
+	%%	just print one %.
+
+	If the character after % is not a specifier, the character will be print.
+
+	If the arguments dont not match with the specified type data, _printf returns an error.
+
+BUGS
+	No known bugs.
+
+AUTHOR
+	Esneider Granada Valencia.
+	Natalia Arteaga Corrales.
