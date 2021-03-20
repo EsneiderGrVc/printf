@@ -23,5 +23,9 @@ int (*get_specifier_function(const char *format))(va_list);
 int _printf(const char *format, ...);
 int print_c(va_list c);
 int print_s(va_list s);
+int print_d(va_list d);
+int print_i(va_list i);
+
+int print_integer(int num);
 
 #endif /* HOLBERTON_H */
