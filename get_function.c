@@ -12,6 +12,8 @@ int (*get_specifier_function(const char *format))(va_list)
 	print_op a[] = {
 		{"c", print_c},
 		{"s", print_s},
+		{"d", print_d},
+		{"i", print_i},
 		{NULL, NULL}
 	};
 	int i = 0;
