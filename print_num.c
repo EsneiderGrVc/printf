@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
 * print_d - function to print an integer.
 * @d: integer passed through va_list.
@@ -20,7 +20,7 @@ int print_d(va_list d)
 
 	if (num != 0)
 	{
-		while (((num % 10) != 0))
+		while (((num % 10) != 0) || (num != 0))
 		{
 			mod = num % 10;
 			if (mod < 0)
