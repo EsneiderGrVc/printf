@@ -34,7 +34,7 @@ int print_d(va_list d)
 	else
 	{
 		write(1, "0", 1);
-		return (1);
+		len += 1;
 	}
 
 	while (j > 0)
